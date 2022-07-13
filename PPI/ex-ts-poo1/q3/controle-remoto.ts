@@ -7,48 +7,48 @@ export class ControleRemoto{
         this.tv = tv
     }
 
-    aumentarVolume(newvolume=0): number{
-        if(newvolume+this.tv.volume <= this.tv.VOLUME_MAXIMO){
-            this.tv.volume += newvolume;
+    AumentarVolume(newvolume): number{
+        if(newvolume+this.tv._volume <= this.tv.VOLUME_MAXIMO){
+            this.tv._volume += newvolume;
         }
-        return this.tv.volume;
+        return this.tv._volume;
     }
 
-    diminuirVolume(newvolume=0): number{
-        this.tv.volume -= newvolume
-        if (this.tv.volume < 0){
-            this.tv.volume = 0
+    DiminuirVolume(newvolume): number{
+        this.tv._volume = this.tv._volume - newvolume
+        if (this.tv._volume < 0){
+            this.tv._volume = 0
         }
-        return this.tv.volume;
+        return this.tv._volume;
     }
 
-    consultarVolume(): void{
-        return console.log(`O volume está em: ${this.tv.volume}.`)
+    get Volume(){
+        return this.tv._volume;
     }
 
-    aumentarCanal(newchannel=0): number{
-        if(newchannel+this.tv.canal <= this.tv.CANAL_MAXIMO){
-            this.tv.canal += newchannel;
+    AumentarCanal(newchannel): number{
+        if(newchannel+this.tv._canal <= this.tv.CANAL_MAXIMO){
+            this.tv._canal += newchannel;
         }
-        return this.tv.canal;
+        return this.tv._canal;
     }
 
-    diminuirCanal(newchannel=0): number{
-        this.tv.canal -= newchannel
-        if (this.tv.canal < 0){
-            this.tv.canal = 0
+    DiminuirCanal(newchannel): number{
+        this.tv._canal = this.tv._canal - newchannel
+        if (this.tv._canal < 0){
+            this.tv._canal = 0
         }
-        return this.tv.canal
+        return this.tv._canal;
     }
 
-    trocarCanal(newchannel=0): number{
+    TrocarCanal(newchannel): number{
         if(newchannel <= this.tv.CANAL_MAXIMO){
-            this.tv.canal = newchannel;
+            this.tv._canal = newchannel;
         }
-        return this.tv.canal;
+        return this.tv._canal;
     }
 
-    consultarCanal(): void{
-        return console.log(`O canal está em: ${this.tv.canal}.`)
+    get Canal(){
+        return this.tv._canal;
     }
 }

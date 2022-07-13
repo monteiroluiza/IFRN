@@ -5,43 +5,46 @@ class ControleRemoto {
     constructor(tv) {
         this.tv = tv;
     }
-    aumentarVolume(newvolume = 0) {
-        if (newvolume + this.tv.volume <= this.tv.VOLUME_MAXIMO) {
-            this.tv.volume += newvolume;
+    AumentarVolume(newvolume) {
+        if (newvolume + this.tv._volume <= this.tv.VOLUME_MAXIMO) {
+            this.tv._volume += newvolume;
         }
-        return this.tv.volume;
+        return this.tv._volume;
     }
-    diminuirVolume(newvolume = 0) {
-        this.tv.volume -= newvolume;
-        if (this.tv.volume < 0) {
-            this.tv.volume = 0;
+    DiminuirVolume(newvolume) {
+        this.tv._volume = this.tv._volume - newvolume;
+        if (this.tv._volume < 0) {
+            this.tv._volume = 0;
         }
-        return this.tv.volume;
+        return this.tv._volume;
     }
-    consultarVolume() {
-        return console.log(`O volume está em: ${this.tv.volume}.`);
+    get Volume() {
+        return this.tv._volume;
     }
-    aumentarCanal(newchannel = 0) {
-        if (newchannel + this.tv.canal <= this.tv.CANAL_MAXIMO) {
-            this.tv.canal += newchannel;
+    AumentarCanal(newchannel) {
+        if (newchannel + this.tv._canal <= this.tv.CANAL_MAXIMO) {
+            this.tv._canal += newchannel;
         }
-        return this.tv.canal;
+        return this.tv._canal;
     }
-    diminuirCanal(newchannel = 0) {
-        this.tv.canal -= newchannel;
-        if (this.tv.canal < 0) {
-            this.tv.canal = 0;
+    DiminuirCanal(newchannel) {
+        this.tv._canal = this.tv._canal - newchannel;
+        if (this.tv._canal < 0) {
+            this.tv._canal = 0;
         }
-        return this.tv.canal;
+        return this.tv._canal;
     }
-    trocarCanal(newchannel = 0) {
+    TrocarCanal(newchannel) {
         if (newchannel <= this.tv.CANAL_MAXIMO) {
-            this.tv.canal = newchannel;
+            this.tv._canal = newchannel;
         }
-        return this.tv.canal;
+        return this.tv._canal;
     }
-    consultarCanal() {
-        return console.log(`O canal está em: ${this.tv.canal}.`);
+    get Canal() {
+        return this.tv._canal;
     }
 }
 exports.ControleRemoto = ControleRemoto;
+
+
+console.log(AumentarCanal(2));

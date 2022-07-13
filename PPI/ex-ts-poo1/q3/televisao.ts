@@ -1,19 +1,19 @@
 export class Televisao{
-    volume: number;
+    _volume: number;
     readonly VOLUME_MAXIMO = 100;
-    canal: number;
+    _canal: number;
     readonly CANAL_MAXIMO = 800;
 
     constructor(){
-        this.volume = 0;
-        this.canal = 0;
+        this._volume = 0;
+        this._canal = 0;
     }
 
-    get _volume(){
-        return this.volume
+    get Volume(){
+        return this._volume
     }
 
-    get _canal(){
-        return this.canal
+    get Canal(){
+        return this._canal
     }
 }

@@ -5,14 +5,14 @@ class Televisao {
     constructor() {
         this.VOLUME_MAXIMO = 100;
         this.CANAL_MAXIMO = 800;
-        this.volume = 0;
-        this.canal = 0;
+        this._volume = 0;
+        this._canal = 0;
     }
-    get _volume() {
-        return this.volume;
+    get Volume() {
+        return this._volume;
     }
-    get _canal() {
-        return this.canal;
+    get Canal() {
+        return this._canal;
     }
 }
 exports.Televisao = Televisao;
