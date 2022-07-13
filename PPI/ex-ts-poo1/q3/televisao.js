@@ -8,11 +8,5 @@ class Televisao {
         this._volume = 0;
         this._canal = 0;
     }
-    get Volume() {
-        return this._volume;
-    }
-    get Canal() {
-        return this._canal;
-    }
 }
 exports.Televisao = Televisao;
